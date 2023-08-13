@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "672562389455",
+    "project_id": "ownerflats-b0f7d",
+    "storage_bucket": "ownerflats-b0f7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672562389455:android:7dee823ac5a3f110d372ba",
+        "android_client_info": {
+          "package_name": "com.abhishek.bhatia.brokerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672562389455-tenfnq8o6evruak8si8ecrj6p3ucsfcm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi6aUPl8-_HAYtBQkpYGxKs7vk_WbnlbU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672562389455-tenfnq8o6evruak8si8ecrj6p3ucsfcm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
