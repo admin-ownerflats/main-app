@@ -1,5 +1,5 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
-import PropertyListingForm from "../components/PropertyListingForm";
+import ListingPage from "../components/ListingPage";
 
 const ListPropertyScreen = () => {
     return (
@@ -7,7 +7,7 @@ const ListPropertyScreen = () => {
             <ScrollView
                 style={{ backgroundColor: "#F0F0F0", flex: 1, marginTop: 50 }}
             >
-                <PropertyListingForm />
+                <ListingPage />
             </ScrollView>
         </>
     )
