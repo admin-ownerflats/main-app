@@ -5,13 +5,23 @@ import BedroomsQuestion from './PropertyDetails/BedroomsQuestion';
 import BathroomQuestion from './PropertyDetails/BathroomQuestion'
 import BalconiesQuestion from './PropertyDetails/BalconiesQuestion';
 import Subheading from '../Basics/Subheading';
+import CarpetAreaInput from './PropertyDetails/CarpetAreaInput';
+import OtherRooms from './PropertyDetails/OtherRooms';
+import FloorDetails from './PropertyDetails/FloorDetails';
+import CoveredParking from './PropertyDetails/CoveredParking';
+import OpenParking from './PropertyDetails/OpenParking';
 
-const BasicDetailsForm = ({ onNext }) => {
+const PropertyDetailComponent = ({ onNext }) => {
   const [lookingTo, setLookingTo] = useState('');
   const [propertyKind, setPropertyKind] = useState('');
   const [propertyType, setPropertyType] = useState('');
   const [sellerPropertyType, setSellerPropertyType] = useState('');
   const [contactDetails, setContactDetails] = useState('');
+  const [carpetArea, setCarpetArea] = useState('');
+  const [buildUpArea, setBuildUpArea] = useState('');
+  const [superBuildUpArea, setSuperBuildUptArea] = useState('');
+  const [furnishingType, setFurnishingType] = useState('');
+  const [availibility, setAvailibillity] = useState('');
 
   const handleNext = () => {
     // Implement logic to move to the next step or component
@@ -47,17 +57,45 @@ const BasicDetailsForm = ({ onNext }) => {
       {/* Form */}
       <View style={styles.formContainer}>
         <Text style={styles.formHeading}>Property Details</Text>
-
-        <View style={styles.optionContainer}>
-          <Text style={styles.question}>You are looking to?</Text>
-          <View style={styles.optionsRow}>
-            {renderOptions(['Sell', 'Rent', 'Paying Guest'], lookingTo, setLookingTo)}
-          </View>
-        </View>
-        <Subheading text="Room Details" />
+        {/* Rooms Details */}
+        <Subheading text="Rooms Details" />
         <BedroomsQuestion />
         <BathroomQuestion />
         <BalconiesQuestion />
+
+        {/* Area Details */}
+        <Subheading text="Area Details" />
+        <CarpetAreaInput textHeading={"Carpet Area"} value={carpetArea} onChangeText={setCarpetArea} />
+        <CarpetAreaInput textHeading={"Build-up Area"} value={buildUpArea} onChangeText={setBuildUpArea} />
+        <CarpetAreaInput textHeading={"Super Build-up Area"} value={superBuildUpArea} onChangeText={setSuperBuildUptArea} />
+
+        {/* Other rooms */}
+        <OtherRooms />
+
+        {/* Furnishing Details */}
+        <View style={styles.optionContainer}>
+          <Text style={styles.question}>Furnishing Details</Text>
+          <View style={styles.optionsRow}>
+            {renderOptions(['Unfurnished', 'Semi Furnished', 'Furnished'], furnishingType, setFurnishingType)}
+          </View>
+        </View>
+
+        {/* Floor Details */}
+        <Subheading text="Floor Details" />
+        <FloorDetails />
+        {/* Parking Details */}
+        <Subheading text="Parking Details" />
+        <CoveredParking />
+        <OpenParking />
+
+        {/* Availibility */}
+        <View style={styles.optionContainer}>
+          <Text style={styles.question}>Availibility</Text>
+          <View style={styles.optionsRow}>
+            {renderOptions(['Ready to Move', 'Under Construction'], availibility, setAvailibillity)}
+          </View>
+        </View>
+
         <TouchableOpacity style={styles.nextButton} onPress={onNext}>
           <Text style={styles.nextButtonText}>Next</Text>
         </TouchableOpacity>
@@ -174,4 +212,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BasicDetailsForm;
+export default PropertyDetailComponent;

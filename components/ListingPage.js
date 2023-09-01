@@ -2,9 +2,9 @@
 import React, { useState } from 'react';
 import { View, Text, ToastAndroid } from 'react-native';
 import PropertyDetailComponent from './ListingForm/PropertyDetailComponent';
-import PricingDetailsComponent from './PricingDetailsComponent';
 import AmenitiesComponent from './AmenitiesComponent';
 import BasicDetailsForm from './ListingForm/BasicDetailsForm';
+import PricingDetails from './ListingForm/PricingDetails';
 
 const ListingPage = () => {
   const [step, setStep] = useState(1);
@@ -25,7 +25,7 @@ const ListingPage = () => {
     <View>
       {step === 1 && <BasicDetailsForm onNext={handleNext} />}
       {step === 2 && <PropertyDetailComponent onNext={handleNext} />}
-      {step === 3 && <PricingDetailsComponent onNext={handleNext} />}
+      {step === 3 && <PricingDetails onNext={handleNext} />}
       {step === 4 && <AmenitiesComponent onSubmit={handleNext} />}
     </View>
   );
